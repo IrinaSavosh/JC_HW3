@@ -3,15 +3,18 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Payroll {
-    private List<Employee> employees = new ArrayList<>();
+public class EmployeeManager implements iEmployeeSorter {
+    List<Employee> employees = new ArrayList<>();
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
 
     public void addEmployee(Employee employee) {
         employees.add(employee);
     }
 
-    // Сортировка работников по среднемесячной заработной плате с помощью Comparator
-    public void sortByAverageMonthlySalary() {
+    public void sortEmployees() {
         Collections.sort(employees, Comparator.comparingDouble(Employee::calculateAverageMonthlySalary));
         for (Employee employee : employees) {
             System.out.println("Имя работника: " + employee.name + "\nДолжность работника: " +

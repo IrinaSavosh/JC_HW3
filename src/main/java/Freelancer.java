@@ -11,11 +11,4 @@ public class Freelancer extends Employee {
         return 20.8 * 8 * hourlyRate;
     }
 
-    public double getHourlyRate() {
-        return hourlyRate;
-    }
-
-    public void setHourlyRate(double hourlyRate) {
-        this.hourlyRate = hourlyRate;
-    }
 }
